@@ -1,5 +1,4 @@
 let body = document.querySelector("body");
-let container = document.querySelector("#content");
 
 function loadPage(){
     loadNavbar();
@@ -45,4 +44,4 @@ function addClassToElement(elementName, className){
     elementName.classList.add(className);
 }
 
-export {loadPage}
+export {loadPage, addClassToElement, createElement}

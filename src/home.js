@@ -1,9 +1,9 @@
-let container = document.querySelector("#content");
+import {createElement, addClassToElement} from './webpage.js';
+
+let body = document.querySelector("body");
 
 function loadHome(){
-
-    let title = document.createElement
-
+    
 }
 
 export {loadHome};
