@@ -11,7 +11,7 @@ body{
 body::after {
     content: "";
     background-color: black;
-    opacity: 0.5;
+    opacity: 0.65;
     top: 0;
     left: 0;
     bottom: 0;
@@ -21,6 +21,7 @@ body::after {
   }
 
 .navbar {
+    position: relative;
     display: flex;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.7);
@@ -29,17 +30,18 @@ body::after {
 }
 
 .navbar-link-container {
+    position: fixed;
     opacity: 1;
     padding: 1px;
     text-align: center;
     width: 400px;
-    margin: 0 auto;
+    right: 0;
 }
 
 .navbar-link-container > a {
     color: white;
     padding-right: 35px;
-    font-size: 1.4em;
+    font-size: 1.5em;
     text-decoration: underline;
     text-decoration-thickness: 0.11em;
     text-decoration-color: rgba(150, 40, 27, 0);
@@ -47,8 +49,7 @@ body::after {
 }
 
 .navbar-link-container > a:hover {
-    text-decoration-color: rgba(150, 40, 27, 1);
-    transform: scale(2);
+    text-decoration-color: #FFD700;
     cursor: pointer;
 } 
 
@@ -58,8 +59,67 @@ body::after {
     margin-left: 20px;
 }
 
-.home-title {
-    color: white;
-    margin-top: 15px;
+.home-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    min-width: 700px;
+    height: 600px;
+}
+
+.restaurant-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.4em;
+    color: #FFD700;
     text-align: center;
 }
+
+.restaurant-subtitle {
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+    font-size: 4em;
+}
+
+.menu-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.menu-button {
+    border: none;
+    outline: none;
+    background-color: #FFD700;
+    margin-right: 50px;
+    border-radius: 50px;
+    padding: 10px 30px 10px 30px;
+    font-size: 1em;
+    transition: 200ms ease-in-out;
+}
+
+.menu-button:hover {
+    transform: scale(1.1);
+}
+
+.contact-button {
+    color: white;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    padding: 10px 30px 10px 30px;
+    font-size: 1em;
+    transition: 0.2s ease-in-out;
+}
+
+.contact-button:hover {
+    background: white;
+    transform: scale(1.1);
+    color: black;
+}
+
