@@ -1,5 +1,6 @@
 import {loadHome} from './home.js';
 import {loadMenu} from './menu.js';
+import {loadContact} from './contact.js';
 
 let mainContainer = document.querySelector("#main-container");
 let content = document.querySelector("#content");
@@ -35,19 +36,30 @@ function loadNavbar(){
         loadHome();
         homeLink.style.color = "#FFD700";
         contactLink.style.color = "white";
+        menuLink.style.color = "white";
+    });
+
+    menuLink.addEventListener("click", () => {
+        content.innerHTML = "";
+        loadMenu();
+        homeLink.style.color = "white";
+        contactLink.style.color = "white";
+        menuLink.style.color = "#FFD700";
     });
 
     contactLink.addEventListener("click", () => {
         content.innerHTML = "";
-        loadMenu();
+        loadContact();
         homeLink.style.color = "white";
+        menuLink.style.color = "white";
         contactLink.style.color = "#FFD700";
     });
 
     //Add the tabs to the container
     linkContainer.appendChild(homeLink);
-    linkContainer.appendChild(contactLink);
     linkContainer.appendChild(menuLink);
+    linkContainer.appendChild(contactLink);
+    
     
     addClassToElement(linkContainer, "navbar-link-container");
 
