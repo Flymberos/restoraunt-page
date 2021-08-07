@@ -1,6 +1,7 @@
 import {createElement, addClassToElement} from './webpage.js';
 
 let body = document.querySelector("body");
+let content = document.querySelector("#content");
 
 function loadHome(){
 
@@ -33,8 +34,7 @@ function loadHome(){
     container.appendChild(restaurantSubtitle);
     container.appendChild(buttonContainer);
 
-    body.appendChild(container);
-
+    content.appendChild(container);
 }
 
 export {loadHome};

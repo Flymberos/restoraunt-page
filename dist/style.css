@@ -18,15 +18,28 @@ body::after {
     right: 0;
     position: absolute;
     z-index: -1;   
-  }
+}
+
+#main-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#content {
+    position: relative;
+    min-height: 100%;
+    flex-grow: 1;
+    height: 90vh;
+}
 
 .navbar {
+    float: left;
     position: relative;
     display: flex;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.7);
-    min-width: 100%;
-    height: 100px;
+    width: 100%;
+    height: 10vh;
 }
 
 .navbar-link-container {
@@ -102,10 +115,6 @@ body::after {
     transition: 200ms ease-in-out;
 }
 
-.menu-button:hover {
-    transform: scale(1.1);
-}
-
 .contact-button {
     color: white;
     background-color: transparent;
@@ -119,7 +128,50 @@ body::after {
 
 .contact-button:hover {
     background: white;
-    transform: scale(1.1);
     color: black;
 }
 
+.menu-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.menu-card {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 250px;
+    width: 200px;
+    margin: 50px;
+}
+
+.menu-card:hover {
+    background-color: rgba(255,255,255, 0.3);
+}
+
+.menu-image {
+    margin-top: 15px;
+    width: 150px;
+    height: 125px;
+}
+
+.menu-pizza-name {
+    color: white;
+    font-size: 1.2em;
+    margin-top: 15px;
+}
+
+.menu-pizza-description {
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+}

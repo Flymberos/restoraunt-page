@@ -1,4 +1,8 @@
-let body = document.querySelector("body");
+import {loadHome} from './home.js';
+import {loadMenu} from './menu.js';
+
+let mainContainer = document.querySelector("#main-container");
+let content = document.querySelector("#content");
 
 function loadPage(){
     loadNavbar();
@@ -23,7 +27,23 @@ function loadNavbar(){
     homeLink.textContent = "Home";
     contactLink.textContent = "Contact";
     menuLink.textContent = "Menu";
-    
+
+    homeLink.style.color = "#FFD700"
+
+    homeLink.addEventListener("click", () => {
+        content.innerHTML = "";
+        loadHome();
+        homeLink.style.color = "#FFD700";
+        contactLink.style.color = "white";
+    });
+
+    contactLink.addEventListener("click", () => {
+        content.innerHTML = "";
+        loadMenu();
+        homeLink.style.color = "white";
+        contactLink.style.color = "#FFD700";
+    });
+
     //Add the tabs to the container
     linkContainer.appendChild(homeLink);
     linkContainer.appendChild(contactLink);
@@ -33,7 +53,7 @@ function loadNavbar(){
 
     navBar.appendChild(logo);
     navBar.appendChild(linkContainer);
-    body.appendChild(navBar);
+    mainContainer.prepend(navBar);
 }
 
 function createElement(elementName){
@@ -43,5 +63,7 @@ function createElement(elementName){
 function addClassToElement(elementName, className){
     elementName.classList.add(className);
 }
+
+loadHome();
 
 export {loadPage, addClassToElement, createElement}
